@@ -5,8 +5,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <a class="mailto" target="_blank" href="mailto:info@rms.group">
-          <img src="./img/Group.svg" />
+        <a class="mailto" rel="noopener noreferrer" target="_blank" href="mailto:info@rms.group">
+          <img alt="" src="./img/Group.svg" />
         </a>
         <video autoPlay muted playsInline loop id="rms">
           <source src="./video/RMS.mp4" type="video/mp4"/>
