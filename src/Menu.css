@@ -1,0 +1,88 @@
+.Menu {
+   position: relative;
+   flex: 0 1 auto;
+   min-width: 60px;
+   padding-top: 160px;
+   margin-left: 40px;
+   transition: 1.5s;
+}
+
+.Menu_opened {
+   width: 400px;
+}
+
+.Menu_closed {
+   width: 60px;
+}
+
+.MenuItems {
+   position: fixed;
+   transition: 0.3s;
+   transition-duration: 1s;
+}
+
+.MenuItems_opened {
+   transition-delay: 1s;
+   opacity: 1;
+}
+
+.MenuItems_closed {
+   transition-duration: .2s;
+   opacity: 0;
+}
+
+.MenuItems ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+.MenuItems li {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 72px;
+   height: 100px;
+}
+
+.MenuItems li::before {
+   display: inline-block;
+   content: '';
+   width: 40px;
+   height: 10px;
+   background-color: white;
+   margin-right: 30px;
+}
+
+.MenuButton {
+   position: fixed;
+   top: 65px;
+   opacity: 0;
+   animation-name: fadein;
+   animation-duration: 3s;
+   animation-delay: 4s;
+   animation-fill-mode: forwards;
+   cursor: pointer;
+}
+
+.MenuInfo {
+   bottom: 20px;
+}
+
+.MenuInfo span {
+   display: block;
+   margin-bottom: 7px;
+}
+
+@keyframes slidein {
+   to {
+      top: 40px;
+   }
+}
+
+@keyframes fadein {
+   to {
+      opacity: 1;
+   }
+}

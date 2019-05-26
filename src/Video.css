@@ -1,0 +1,31 @@
+.Video {
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%; 
+   overflow: hidden;
+   animation-name: blur;
+   animation-duration: 3s;
+   animation-delay: 3s;
+   animation-fill-mode: forwards;
+}
+
+video#rms {
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   z-index: -10;
+}
+
+@keyframes blur {
+   to {
+      filter: blur(20px);
+   }
+}
