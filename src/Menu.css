@@ -1,34 +1,25 @@
 .Menu {
    position: relative;
    flex: 0 1 auto;
-   min-width: 60px;
-   padding-top: 160px;
-   margin-left: 40px;
-   transition: 1.5s;
+   width: 40px;
+   padding-top: 105px;
+   margin: 65px 30px 0 40px;
+   transition: width 2s;
 }
 
 .Menu_opened {
    width: 400px;
 }
 
-.Menu_closed {
-   width: 60px;
-}
-
 .MenuItems {
    position: fixed;
-   transition: 0.3s;
-   transition-duration: 1s;
-}
-
-.MenuItems_opened {
-   transition-delay: 1s;
-   opacity: 1;
-}
-
-.MenuItems_closed {
-   transition-duration: .2s;
+   transition: opacity .5s linear .2s;
    opacity: 0;
+}
+
+.Menu_opened .MenuItems {
+   transition: opacity 2s linear .7s;
+   opacity: 1;
 }
 
 .MenuItems ul {

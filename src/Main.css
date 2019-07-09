@@ -1,4 +1,4 @@
-.Content {
+.Main {
    height: 0;
    flex: 1 1 auto;
    padding-top: 160px;
@@ -9,12 +9,16 @@
    animation-fill-mode: forwards;
 }
 
-.Text {
-   max-width: 500px;
+.Main .Text {
+   max-width: 850px;
 }
 
-@keyframes fadein {
-   to {
-      opacity: 1;
-   }
+.Main .Text h1 {
+   font-size: 72px;
+   line-height: 86px;
+}
+
+.Main .Text p {
+   font-size: 30px;
+   line-height: 135%;
 }

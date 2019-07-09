@@ -9,35 +9,39 @@ class Menu extends Component {
       }
    }
 
-   handleClickMenu() {
+   handleMenuClick() {
       this.setState({
          opened: !this.state.opened
       });
    }
 
+   handleMenuItemClick(id) {
+      this.handleMenuClick();
+      this.props.handleMenuItemClick(id);
+   }
+
    render() {
-      const isOpened = this.state.opened ? '_opened' : '_closed';
-      const menuClass = 'Menu Menu' + isOpened;
-      const itemsClass = 'MenuItems MenuItems' + isOpened;
+      const isOpened = this.state.opened ? 'Menu_opened' : '';
+      const menuClass = 'Menu ' + isOpened;
       return (
          <div className={menuClass} ref="menu">
-            <div className="MenuButton" onClick={this.handleClickMenu.bind(this)}>
+            <div className="MenuButton" onClick={this.handleMenuClick.bind(this)}>
                <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
                   <rect y="20" width="40" height="10" fill="white"/>
                   <rect width="40" height="10" fill="white"/>
                </svg>
             </div>
-            <div className={itemsClass}>
+            <div className="MenuItems">
                <ul>
-                  <li>Аренда</li>
-                  <li>Услуги</li>
-                  <li>Проекты</li>
-                  <li>О нас</li>
+                  <li onClick={this.handleMenuItemClick.bind(this, 1)}>Аренда</li>
+                  <li onClick={this.handleMenuItemClick.bind(this, 2)}>Услуги</li>
+                  <li onClick={this.handleMenuItemClick.bind(this, 3)}>Проекты</li>
+                  <li onClick={this.handleMenuItemClick.bind(this, 4)}>О нас</li>
                </ul>
-            </div>
-            <div className={itemsClass + ' MenuInfo'}>
-               <span>hello@rms.group</span>
-               <span>+7 987 231-77-46</span>
+               <div className='MenuInfo'>
+                  <span>hello@rms.group</span>
+                  <span>+7 987 231-77-46</span>
+               </div>
             </div>
          </div>
       );

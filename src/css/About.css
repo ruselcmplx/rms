@@ -1,0 +1,18 @@
+.About {
+   height: 0;
+   flex: 1 1 auto;
+   padding-top: 160px;
+   opacity: 0;
+   animation-name: fadein;
+   animation-duration: 1.5s;
+   animation-fill-mode: forwards;
+}
+
+.About .Text {
+   max-width: 720px;
+}
+
+.About .Text p {
+   font-size: 18px;
+   line-height: 135%;
+}

@@ -12,6 +12,7 @@
    font-size: 18px;
    line-height: 135%;
    color: #FFFFFF;
+   height: 100%;
 }
 
 .Logo {
@@ -20,7 +21,17 @@
    animation-name: slidein;
    animation-delay: 3s;
    top: 50%;
-   left: 8%;
+   left: 110px;
    width: 180px;
    animation-fill-mode: forwards;
+}
+
+.ActiveArea {
+   flex: 1 1 auto;
+}
+
+@keyframes fadein {
+   to {
+      opacity: 1;
+   }
 }
