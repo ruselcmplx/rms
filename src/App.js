@@ -36,9 +36,13 @@ class App extends Component {
             activeArea = <Main />;
             break;
          case 1:
+            activeArea = <About />
             break;
          case 2:
             activeArea = <Services />
+            break;
+         case 3:
+            activeArea = <About />
             break;
          case 4:
             activeArea = <About />
