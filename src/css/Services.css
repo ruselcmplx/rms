@@ -1,0 +1,24 @@
+.Services {
+   flex: 1 1 auto;
+   padding-top: 160px;
+   opacity: 0;
+   animation-name: fadein;
+   animation-duration: 1.5s;
+   animation-fill-mode: forwards;
+}
+
+.Services_text {
+   max-width: 720px;
+}
+
+.Services_text ul {
+   list-style: none;
+   padding-inline-start: 0;
+   margin-left: 5px;
+}
+
+.Services_text ul li::before {
+   content:  "—";
+   position: relative;
+   left: -5px;
+}

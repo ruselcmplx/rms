@@ -1,25 +1,32 @@
 .Menu {
-   position: relative;
+   z-index: 0;
+   position: fixed;
    flex: 0 1 auto;
    width: 40px;
    padding-top: 105px;
    margin: 65px 30px 0 40px;
-   transition: width 2s;
+   -webkit-user-select: none; /* Safari */        
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* IE10+/Edge */
+   user-select: none; /* Standard */
 }
 
-.Menu_opened {
-   width: 400px;
+.Menu_opened .Menu {
+   z-index: 1;
 }
 
 .MenuItems {
    position: fixed;
-   transition: opacity .5s linear .2s;
+   transition: opacity .5s;
    opacity: 0;
 }
 
 .Menu_opened .MenuItems {
-   transition: opacity 2s linear .7s;
    opacity: 1;
+}
+
+.Menu_opened .MenuItems li span {
+   cursor: pointer;
 }
 
 .MenuItems ul {
@@ -31,7 +38,6 @@
 .MenuItems li {
    display: flex;
    align-items: center;
-   cursor: pointer;
    font-weight: bold;
    font-size: 72px;
    height: 100px;
@@ -64,12 +70,6 @@
 .MenuInfo span {
    display: block;
    margin-bottom: 7px;
-}
-
-@keyframes slidein {
-   to {
-      top: 40px;
-   }
 }
 
 @keyframes fadein {

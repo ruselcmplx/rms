@@ -10,8 +10,9 @@
    font-style: normal;
    font-weight: normal;
    font-size: 18px;
-   line-height: 135%;
+   line-height: 24px;
    color: #FFFFFF;
+   text-align: left;
    height: 100%;
 }
 
@@ -26,12 +27,28 @@
    animation-fill-mode: forwards;
 }
 
-.ActiveArea {
-   flex: 1 1 auto;
+.Logo_text {
+   position: absolute;
+   top: 40px;
+   left: 320px;
+   font-weight: bold;
+   font-size: 72px;
+   line-height: 86px;
 }
 
-@keyframes fadein {
+.ActiveArea {
+   margin-left: 110px;
+   opacity: 1;
+   flex: 1 1 auto;
+   transition: opacity .5s;
+}
+
+.Menu_opened .ActiveArea {
+   opacity: 0;
+}
+
+@keyframes slidein {
    to {
-      opacity: 1;
+      top: 40px;
    }
 }

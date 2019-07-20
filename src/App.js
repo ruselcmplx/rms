@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Video from './Video';
 import Menu from './Menu';
+import Services from './Services';
 import Main from './Main';
 import About from './About';
 import './App.css';
@@ -9,9 +10,17 @@ class App extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         active: 0
+         active: 0,
+         menuOpened: false
       }
    }
+
+   handleMenuButtonClick() {
+      this.setState({
+         menuOpened: !this.state.menuOpened
+      });
+   }
+
    handleMenuItemClick(id) {
       this.setState({
          active: id
@@ -20,10 +29,16 @@ class App extends Component {
 
    render() {
       const active = this.state.active;
+      const video = <Video />
       let activeArea;
       switch (active) {
          case 0:
             activeArea = <Main />;
+            break;
+         case 1:
+            break;
+         case 2:
+            activeArea = <Services />
             break;
          case 4:
             activeArea = <About />
@@ -32,17 +47,20 @@ class App extends Component {
             activeArea = <Main />;
             break;
       }
+      const stateClass = this.state.menuOpened ? 'Menu_opened' : 'Menu_closed';
 
       return (
          <div className="App">
             <div className="Logo">
                <img alt="" src="./img/Group.svg" />
             </div>
-            <Menu handleMenuItemClick={this.handleMenuItemClick.bind(this)} />
-            <div className="ActiveArea">
-               { activeArea }
+            <div className={'Content '+stateClass}>
+               <Menu handleMenuButtonClick={this.handleMenuButtonClick.bind(this)} handleMenuItemClick={this.handleMenuItemClick.bind(this)} />
+               <div className="ActiveArea">
+                  { activeArea }
+               </div>
             </div>
-            <Video />
+            {active ? null : video}
          </div>
       );
    }

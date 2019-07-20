@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.155mm" height="5.891mm" viewBox="0 0 48.628 16.698">
+  <title>tida</title>
+  <g>
+    <rect y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="4.174" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="4.174" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="4.174" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="14.872" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="14.872" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="14.872" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="29.616" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="29.616" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="29.616" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="29.616" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <polygon points="25.442 8.349 21.267 8.349 25.442 4.174 25.442 8.349" fill="#fff" fill-rule="evenodd"/>
+    <rect x="21.267" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <polygon points="25.442 16.698 21.267 12.523 25.442 12.523 25.442 16.698" fill="#fff" fill-rule="evenodd"/>
+    <rect x="25.442" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="25.442" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="44.453" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="44.453" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="44.453" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <polygon points="40.279 8.349 36.105 8.349 40.279 4.174 40.279 8.349" fill="#fff" fill-rule="evenodd"/>
+    <rect x="36.105" y="8.349" width="4.174" height="4.174" fill="#fff"/>
+    <polygon points="40.279 16.698 36.105 12.523 40.279 12.523 40.279 16.698" fill="#fff" fill-rule="evenodd"/>
+    <rect x="40.279" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="40.279" y="12.523" width="4.174" height="4.174" fill="#fff"/>
+    <rect x="8.349" y="4.174" width="4.174" height="4.174" fill="#fff"/>
+  </g>
+</svg>

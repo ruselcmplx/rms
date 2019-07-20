@@ -1,0 +1,22 @@
+.Carousel {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  flex-direction: column;
+  height: calc(100px * 42);
+  overflow: hidden;
+}
+
+.Carousel_item {
+   height: 100px;
+   display: flex;
+   justify-content: center;
+}
+
+@keyframes scroll {
+   0% {
+      transform: translateY(calc(-100px * 21));
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}

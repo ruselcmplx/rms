@@ -1,5 +1,4 @@
 .About {
-   height: 0;
    flex: 1 1 auto;
    padding-top: 160px;
    opacity: 0;
@@ -8,11 +7,15 @@
    animation-fill-mode: forwards;
 }
 
-.About .Text {
+.About_text {
    max-width: 720px;
 }
 
-.About .Text p {
-   font-size: 18px;
-   line-height: 135%;
+.About_carousel {
+   position: absolute;
+   top: 0;
+   right: 130px;
+   width: 200px;
+   height: 100%;
+   overflow: hidden;
 }
