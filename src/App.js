@@ -4,7 +4,7 @@ import Menu from './Menu';
 import Services from './Services';
 import Main from './Main';
 import About from './About';
-import './App.css';
+import './css/App.css';
 
 class App extends Component {
    constructor(props) {

@@ -1,19 +1,23 @@
 @font-face {
    font-family: 'Inter UI';
-   src: url('./fonts/Inter-Regular.ttf') format('ttf');
-   src: url('./fonts/Inter-Regular.woff') format('woff');
+   src: url('../fonts/Inter-Regular.ttf') format('ttf');
+   src: url('../fonts/Inter-Regular.woff') format('woff');
 }
 
 .App {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: -2%;
    display: flex;
    font-family: Inter UI;
    font-style: normal;
    font-weight: normal;
    font-size: 18px;
-   line-height: 24px;
    color: #FFFFFF;
    text-align: left;
-   height: 100%;
+   overflow-y: scroll;
 }
 
 .Logo {

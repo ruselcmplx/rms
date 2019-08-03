@@ -9,6 +9,11 @@
 
 .Services_text {
    max-width: 720px;
+   line-height: 24px;
+}
+
+.Services_text h3 {
+   font-size: 32px;
 }
 
 .Services_text ul {
@@ -21,4 +26,48 @@
    content:  "—";
    position: relative;
    left: -5px;
+}
+
+.Services_menu {
+   position: fixed;
+   top: 40px;
+   left: 900px;
+   max-width: 410px; 
+}
+
+.Services_menu ul {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   list-style: none;
+   padding-inline-start: 0;
+}
+
+.Services_menu li {
+   box-sizing: border-box;
+   border: 4px solid white;
+   margin-bottom: 12px;
+   background: white;
+   color: black;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 24px;
+   display: flex;
+   align-items: center;
+   padding: 0 7px;
+   line-height: 39px;
+}
+
+.Services_menu li#streams {
+   max-width: 85%;
+}
+
+.Services_menu li:hover {
+   color: white;
+   background: black;
+}
+
+.Services_menu .Services_menu-active {
+   color: white;
+   background: black;
 }
