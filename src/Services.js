@@ -10,6 +10,22 @@ class Services extends Component {
       };
    }
 
+   handleScroll(event) {
+      const target = event.target;
+   }
+
+   componentDidMount() {
+      document
+         .getElementById('scroll')
+         .addEventListener('scroll', this.handleScroll.bind(this));
+   }
+
+   componentWillUnmount() {
+      document
+         .getElementById('scroll')
+         .removeEventListener('scroll', this.handleScroll.bind(this));
+   }
+
    handleServicesMenuClick(activeMenuItem) {
       this[activeMenuItem].scrollIntoView({
          behavior: 'smooth',
@@ -79,9 +95,9 @@ class Services extends Component {
       ];
       const activeMenuItem = this.state.activeMenuItem;
       return (
-         <div className="Services">
+         <div className="Services" ref="container">
             <div className="Logo_text">Услуги</div>
-            <div className="Services_text">
+            <div className="Services_text" ref={this.initRef.bind(this)}>
                <div className="Services_rent" ref={this.initRef.bind(this)}>
                   <h3>Аренда оборудования</h3>
                   <p>

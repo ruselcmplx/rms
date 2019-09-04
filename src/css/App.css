@@ -1,7 +1,9 @@
-@font-face {
-   font-family: 'Inter UI';
-   src: url('../fonts/Inter-Regular.ttf') format('ttf');
-   src: url('../fonts/Inter-Regular.woff') format('woff');
+@import url('https://rsms.me/inter/inter.css');
+
+@supports (font-variation-settings: normal) {
+   .App {
+      font-family: 'Inter var', sans-serif;
+   }
 }
 
 .App {
@@ -11,11 +13,11 @@
    left: 0;
    right: -2%;
    display: flex;
-   font-family: Inter UI;
+   font-family: 'Inter', sans-serif;
    font-style: normal;
    font-weight: normal;
    font-size: 18px;
-   color: #FFFFFF;
+   color: #ffffff;
    text-align: left;
    overflow-y: scroll;
 }
@@ -44,7 +46,7 @@
    margin-left: 110px;
    opacity: 1;
    flex: 1 1 auto;
-   transition: opacity .5s;
+   transition: opacity 0.5s;
 }
 
 .Menu_opened .ActiveArea {

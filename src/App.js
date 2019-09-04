@@ -55,7 +55,7 @@ class App extends Component {
       const stateClass = this.state.menuOpened ? 'Menu_opened' : 'Menu_closed';
 
       return (
-         <div className="App">
+         <div className="App" id="scroll">
             <div className="Logo">
                <img alt="" src="./img/Group.svg" />
             </div>
