@@ -6,15 +6,33 @@ class Services extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         activeMenuItem: 0
+         activeMenuItem: null
       };
+      this.children = {};
+      this.offsets = [];
    }
 
    handleScroll(event) {
-      const target = event.target;
+      const scrollTop = event.target.scrollTop;
+      const offsets = this.offsets;
+      for (var i = 0; i++; i < offsets.length) {
+         if (scrollTop > offsets[i] && scrollTop < offsets[i+1]) {
+            this.setState({
+               activeMenuItem: 1
+            })
+         }
+      }
    }
 
    componentDidMount() {
+      const children = this.children;
+      for (const name in children) {
+         if (children.hasOwnProperty(name)) {
+            const child = children[name];
+            const offset = child.offsetTop;
+            this.offsets.push(offset);
+         }
+      }
       document
          .getElementById('scroll')
          .addEventListener('scroll', this.handleScroll.bind(this));
@@ -27,7 +45,7 @@ class Services extends Component {
    }
 
    handleServicesMenuClick(activeMenuItem) {
-      this[activeMenuItem].scrollIntoView({
+      this.children[activeMenuItem].scrollIntoView({
          behavior: 'smooth',
          block: 'center',
          inline: 'nearest'
@@ -35,12 +53,12 @@ class Services extends Component {
       this.setState({ activeMenuItem });
    }
 
-   initRef(el) {
+   getRef(el) {
       if (!el) {
          return;
       }
       const name = el.className.split('_')[1];
-      this[name] = el;
+      this.children[name] = el;
    }
 
    render() {
@@ -97,8 +115,8 @@ class Services extends Component {
       return (
          <div className="Services" ref="container">
             <div className="Logo_text">Услуги</div>
-            <div className="Services_text" ref={this.initRef.bind(this)}>
-               <div className="Services_rent" ref={this.initRef.bind(this)}>
+            <div className="Services_text" ref={this.getRef.bind(this)}>
+               <div className="Services_rent" ref={this.getRef.bind(this)}>
                   <h3>Аренда оборудования</h3>
                   <p>
                      Наша техническая база позволяет реализовать проекты любого
@@ -120,7 +138,7 @@ class Services extends Component {
                      возможные риски.
                   </p>
                </div>
-               <div className="Services_displays" ref={this.initRef.bind(this)}>
+               <div className="Services_displays" ref={this.getRef.bind(this)}>
                   <h3>Светодиодные экраны</h3>
                   <p>
                      Светодиодный экран имеет возможность вести трансляцию
@@ -147,7 +165,7 @@ class Services extends Component {
                   </p>
                   <h4>Стоимость от 3000 ₽ за м²</h4>
                </div>
-               <div className="Services_support" ref={this.initRef.bind(this)}>
+               <div className="Services_support" ref={this.getRef.bind(this)}>
                   <h3>Техническое сопровождение</h3>
                   <p>Мы оказываем услуги по администрированию мероприятий:</p>
                   <ul>
@@ -174,7 +192,7 @@ class Services extends Component {
                   </p>
                   <h4>Стоимость от 15 000 ₽</h4>
                </div>
-               <div className="Services_streams" ref={this.initRef.bind(this)}>
+               <div className="Services_streams" ref={this.getRef.bind(this)}>
                   <h3>Организация трансляций, конференций и телемостов</h3>
                   <p>Организуем трансляции мероприятий и видеосъемку:</p>
                   <ul>
@@ -196,7 +214,7 @@ class Services extends Component {
                </div>
                <div
                   className="Services_conference"
-                  ref={this.initRef.bind(this)}
+                  ref={this.getRef.bind(this)}
                >
                   <h3>Системы конференц-связи</h3>
                   <p>
@@ -212,10 +230,7 @@ class Services extends Component {
                   </ul>
                   <h4>Стоимость от 18 000 ₽</h4>
                </div>
-               <div
-                  className="Services_translate"
-                  ref={this.initRef.bind(this)}
-               >
+               <div className="Services_translate" ref={this.getRef.bind(this)}>
                   <h3>Синхронный перевод</h3>
                   <p>
                      Мы уверены, что языковой барьер не должен быть препятствием
@@ -234,7 +249,7 @@ class Services extends Component {
                </div>
                <div
                   className="Services_interactive"
-                  ref={this.initRef.bind(this)}
+                  ref={this.getRef.bind(this)}
                >
                   <h3>Интерактивные инсталяции</h3>
                   <p>
@@ -250,7 +265,7 @@ class Services extends Component {
                   </p>
                   <h4>Стоимость от 30 000 ₽</h4>
                </div>
-               <div className="Services_video" ref={this.initRef.bind(this)}>
+               <div className="Services_video" ref={this.getRef.bind(this)}>
                   <h3>Производство видео</h3>
                   <p>
                      Мы занимаемся полным циклом производства видео — для этого
@@ -274,10 +289,7 @@ class Services extends Component {
                   </ul>
                   <h4>Стоимость от 10 000 ₽</h4>
                </div>
-               <div
-                  className="Services_tvbridges"
-                  ref={this.initRef.bind(this)}
-               >
+               <div className="Services_tvbridges" ref={this.getRef.bind(this)}>
                   <h3>Телемосты</h3>
                   <p>
                      Данный формат часто используется для проведения
@@ -295,7 +307,7 @@ class Services extends Component {
                   </ul>
                   <h4>Стоимость от 30 000 ₽</h4>
                </div>
-               <div className="Services_offices" ref={this.initRef.bind(this)}>
+               <div className="Services_offices" ref={this.getRef.bind(this)}>
                   <h3>Мобильные офисы</h3>
                   <p>
                      Для модерации и управления техническим оснащением вашего
@@ -314,7 +326,7 @@ class Services extends Component {
                </div>
                <div
                   className="Services_presscentre"
-                  ref={this.initRef.bind(this)}
+                  ref={this.getRef.bind(this)}
                >
                   <h3>Организация пресс-центров</h3>
                   <p>
