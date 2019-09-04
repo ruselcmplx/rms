@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Video from './Video';
 import Menu from './Menu';
+import Rent from './Rent';
 import Services from './Services';
 import Main from './Main';
 import About from './About';
@@ -12,7 +13,7 @@ class App extends Component {
       this.state = {
          active: 0,
          menuOpened: false
-      }
+      };
    }
 
    handleMenuButtonClick() {
@@ -29,23 +30,23 @@ class App extends Component {
 
    render() {
       const active = this.state.active;
-      const video = <Video />
+      const video = <Video />;
       let activeArea;
       switch (active) {
          case 0:
             activeArea = <Main />;
             break;
          case 1:
-            activeArea = <About />
+            activeArea = <Rent />;
             break;
          case 2:
-            activeArea = <Services />
+            activeArea = <Services />;
             break;
          case 3:
-            activeArea = <About />
+            activeArea = <About />;
             break;
          case 4:
-            activeArea = <About />
+            activeArea = <About />;
             break;
          default:
             activeArea = <Main />;
@@ -58,11 +59,12 @@ class App extends Component {
             <div className="Logo">
                <img alt="" src="./img/Group.svg" />
             </div>
-            <div className={'Content '+stateClass}>
-               <Menu handleMenuButtonClick={this.handleMenuButtonClick.bind(this)} handleMenuItemClick={this.handleMenuItemClick.bind(this)} />
-               <div className="ActiveArea">
-                  { activeArea }
-               </div>
+            <div className={'Content ' + stateClass}>
+               <Menu
+                  handleMenuButtonClick={this.handleMenuButtonClick.bind(this)}
+                  handleMenuItemClick={this.handleMenuItemClick.bind(this)}
+               />
+               <div className="ActiveArea">{activeArea}</div>
             </div>
             {active ? null : video}
          </div>

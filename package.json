@@ -5,17 +5,21 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
+    "gulp": "^4.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.0.1",
+    "react-transition-group": "^4.2.2"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "prebuild": "npm run prettify",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettify": "gulp prettify"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,6 +35,7 @@
     "@typescript-eslint/experimental-utils": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "@typescript-eslint/typescript-estree": "^1.11.0",
+    "gulp-prettier": "^2.1.0",
     "typescript": "^3.5.2"
   }
 }

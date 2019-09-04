@@ -6,7 +6,7 @@ class Menu extends Component {
       super(props);
       this.state = {
          opened: false
-      }
+      };
    }
 
    handleMenuClick() {
@@ -21,20 +21,39 @@ class Menu extends Component {
    render() {
       return (
          <div className="Menu" ref="menu">
-            <div className="MenuButton" onClick={this.handleMenuClick.bind(this)}>
+            <div
+               className="MenuButton"
+               onClick={this.handleMenuClick.bind(this)}
+            >
                <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
-                  <rect y="20" width="40" height="10" fill="white"/>
-                  <rect width="40" height="10" fill="white"/>
+                  <rect y="20" width="40" height="10" fill="white" />
+                  <rect width="40" height="10" fill="white" />
                </svg>
             </div>
             <div className="MenuItems">
                <ul>
-                  <li><span onClick={this.handleMenuItemClick.bind(this, 1)}>Аренда</span></li>
-                  <li><span onClick={this.handleMenuItemClick.bind(this, 2)}>Услуги</span></li>
-                  <li><span onClick={this.handleMenuItemClick.bind(this, 3)}>Проекты</span></li>
-                  <li><span onClick={this.handleMenuItemClick.bind(this, 4)}>О нас</span></li>
+                  <li>
+                     <span onClick={this.handleMenuItemClick.bind(this, 1)}>
+                        Аренда
+                     </span>
+                  </li>
+                  <li>
+                     <span onClick={this.handleMenuItemClick.bind(this, 2)}>
+                        Услуги
+                     </span>
+                  </li>
+                  <li>
+                     <span onClick={this.handleMenuItemClick.bind(this, 3)}>
+                        Проекты
+                     </span>
+                  </li>
+                  <li>
+                     <span onClick={this.handleMenuItemClick.bind(this, 4)}>
+                        О нас
+                     </span>
+                  </li>
                </ul>
-               <div className='MenuInfo'>
+               <div className="MenuInfo">
                   <span>hello@rms.group</span>
                   <span>+7 987 231-77-46</span>
                </div>
