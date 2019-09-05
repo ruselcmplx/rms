@@ -22,7 +22,9 @@ class Rent extends Component {
          <div className="Rent">
             <div className="Logo_text">
                <div className="RentLogo">Аренда</div>
-               <RentTabs handleTabItemClick={this.handleTabItemClick.bind(this)} />
+               <RentTabs
+                  handleTabItemClick={this.handleTabItemClick.bind(this)}
+               />
             </div>
             <div className="RentObjects_container">
                <TransitionGroup>
