@@ -6,24 +6,35 @@
 }
 
 .RentTabs_tab {
-   opacity: 0.5;
    cursor: pointer;
    margin-right: 0.2em;
-}
-
-.RentTabs_tab-active {
-   opacity: 1;
-}
-
-.RentTabs-enter {
    opacity: 0.5;
 }
 
-.RentTabs-enter-active {
-   opacity: 1;
-   transition: all 1000ms ease-in-out;
+.Tab-enter {
+   opacity: 0;
 }
 
-.RentTabs-exit {
-   display: none;
+.Tab-enter-active {
+   opacity: 0.5;
+   transition: all 500ms ease-out;
+}
+
+.Tab-enter:first-child,
+.Tab-enter-done:first-child,
+.Tab-appear:first-child,
+.Tab-appear-done:first-child {
+   opacity: 1;
+}
+
+.Tab-exit {
+   opacity: 0.5;
+   width: 100%;
+}
+
+.Tab-exit-active {
+   margin: 0;
+   width: 0;
+   opacity: 0;
+   transition: all 500ms ease-out;
 }

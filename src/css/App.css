@@ -25,13 +25,13 @@
 
 .Logo {
    position: absolute;
-   /*animation-duration: 3s;
+   animation-duration: 3s;
    animation-name: slidein;
    animation-delay: 3s;
    top: 50%;
    left: 110px;
    width: 180px;
-   animation-fill-mode: forwards;*/
+   animation-fill-mode: forwards;
 }
 
 .Logo_text {

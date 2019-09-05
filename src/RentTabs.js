@@ -6,68 +6,58 @@ class RentTab extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         activeTab: 'video'
+         activeTab: 'video',
+         tabs: [
+            {
+               id: 'video',
+               text: 'видео'
+            },
+            {
+               id: 'audio',
+               text: 'звука'
+            },
+            {
+               id: 'office_equip',
+               text: 'оргтехники'
+            }
+         ]
       };
-      this.tabs = [
-         {
-            id: 'video',
-            text: 'видео'
-         },
-         {
-            id: 'audio',
-            text: 'звука'
-         },
-         {
-            id: 'office_equip',
-            text: 'оргтехники'
-         }
-      ];
    }
 
-   handleTabItemClick(activeTab) {
-      this.setState({ activeTab });
+   handleTabItemClick(index, activeTab) {
+      const currentTabs = this.state.tabs;
+      const sliced = currentTabs.splice(index);
+      const newTabs = sliced.concat(currentTabs);
+      this.setState({ tabs: sliced });
+      setTimeout(() => {
+         this.setState({ tabs: newTabs });
+      }, 500);
       this.props.handleTabItemClick(activeTab);
    }
 
-   sortFunc(a, b) {
-      const active = this.state.activeTab;
-      return a.id === active ? -1 : 1;
-   }
-
    render() {
-      const tabs = this.tabs;
-      const activeTab = this.state.activeTab;
-      tabs.sort(this.sortFunc.bind(this));
+      const tabs = this.state.tabs;
       return (
-         <div className="RentTabsContainer">
+         <div className="RentTabs">
             <TransitionGroup component={null}>
-               <CSSTransition
-                  key={activeTab}
-                  timeout={1000}
-                  classNames="RentTabs"
-               >
-                  <div className="RentTabs">
-                     {tabs.map((item, id) => {
-                        return (
-                           <div
-                              key={id}
-                              id={item.id}
-                              className={
-                                 activeTab === item.id
-                                    ? 'RentTabs_tab RentTabs_tab-active'
-                                    : 'RentTabs_tab'
-                              }
-                              onClick={this.handleTabItemClick.bind(
-                                 this,
-                                 item.id
-                              )}
-                           >
-                              <div>{item.text}</div>
-                           </div>
-                        );
-                     })}
-                  </div>
-               </CSSTransition>
+               {tabs.map(({ id, text }, index) => (
+                  <CSSTransition
+                     key={id}
+                     timeout={{
+                        enter: 8000,
+                        exit: 800
+                     }}
+                     appear={true}
+                     classNames="Tab"
+                  >
+                     <div
+                        className="RentTabs_tab"
+                        onClick={this.handleTabItemClick.bind(this, index, id)}
+                     >
+                        <div>{text}</div>
+                     </div>
+                  </CSSTransition>
+               ))}
             </TransitionGroup>
          </div>
       );
