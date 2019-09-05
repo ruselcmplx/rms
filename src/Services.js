@@ -6,22 +6,11 @@ class Services extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         activeMenuItem: null
+         activeMenuItem: 'rent'
       };
       this.children = {};
-      this.offsets = [];
-   }
-
-   handleScroll(event) {
-      const scrollTop = event.target.scrollTop;
-      const offsets = this.offsets;
-      for (var i = 0; i++; i < offsets.length) {
-         if (scrollTop > offsets[i] && scrollTop < offsets[i+1]) {
-            this.setState({
-               activeMenuItem: 1
-            })
-         }
-      }
+      this.sizes = {};
+      this.scrollByClick = false;
    }
 
    componentDidMount() {
@@ -30,7 +19,11 @@ class Services extends Component {
          if (children.hasOwnProperty(name)) {
             const child = children[name];
             const offset = child.offsetTop;
-            this.offsets.push(offset);
+            const height = child.offsetHeight;
+            this.sizes[name] = {
+               offset,
+               height
+            };
          }
       }
       document
@@ -44,21 +37,40 @@ class Services extends Component {
          .removeEventListener('scroll', this.handleScroll.bind(this));
    }
 
-   handleServicesMenuClick(activeMenuItem) {
-      this.children[activeMenuItem].scrollIntoView({
-         behavior: 'smooth',
-         block: 'center',
-         inline: 'nearest'
-      });
-      this.setState({ activeMenuItem });
-   }
-
    getRef(el) {
       if (!el) {
          return;
       }
       const name = el.className.split('_')[1];
       this.children[name] = el;
+   }
+
+   handleServicesMenuClick(activeMenuItem) {
+      this.children[activeMenuItem].scrollIntoView({
+         behavior: 'smooth',
+         block: 'center',
+         inline: 'center'
+      });
+   }
+
+   handleScroll(event) {
+      const scrollTop = event.target.scrollTop + event.target.offsetHeight/2;
+      const sizes = this.sizes;
+      for (var name in sizes) {
+         if (sizes.hasOwnProperty(name)) {
+            const sizeObj = sizes[name];
+            const top = sizeObj.offset;
+            const bottom = top + sizeObj.height + 30;
+            if (scrollTop < bottom && scrollTop > top) {
+               if (name !== this.state.activeMenuItem) {
+                  this.setState({
+                     activeMenuItem: name
+                  });
+               }
+               return;
+            }
+         }
+      }
    }
 
    render() {
