@@ -54,7 +54,7 @@ class Services extends Component {
    }
 
    handleScroll(event) {
-      const scrollTop = event.target.scrollTop + event.target.offsetHeight/2;
+      const scrollTop = event.target.scrollTop + event.target.offsetHeight / 2;
       const sizes = this.sizes;
       for (var name in sizes) {
          if (sizes.hasOwnProperty(name)) {

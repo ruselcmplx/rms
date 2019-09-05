@@ -11,7 +11,7 @@ class App extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         active: 0,
+         active: 1,
          menuOpened: false
       };
    }

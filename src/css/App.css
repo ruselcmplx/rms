@@ -20,29 +20,31 @@
    color: #ffffff;
    text-align: left;
    overflow-y: scroll;
+   overflow-x: hidden;
 }
 
 .Logo {
    position: absolute;
-   animation-duration: 3s;
+   /*animation-duration: 3s;
    animation-name: slidein;
    animation-delay: 3s;
    top: 50%;
    left: 110px;
    width: 180px;
-   animation-fill-mode: forwards;
+   animation-fill-mode: forwards;*/
 }
 
 .Logo_text {
    position: absolute;
    top: 40px;
-   left: 320px;
+   left: 200px;
    font-weight: bold;
    font-size: 72px;
    line-height: 86px;
 }
 
 .ActiveArea {
+   position: relative;
    margin-left: 110px;
    opacity: 1;
    flex: 1 1 auto;

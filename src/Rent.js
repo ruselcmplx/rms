@@ -20,8 +20,10 @@ class Rent extends Component {
       const activeTab = this.state.activeTab;
       return (
          <div className="Rent">
-            <div className="Logo_text">Аренда</div>
-            <RentTabs handleTabItemClick={this.handleTabItemClick.bind(this)} />
+            <div className="Logo_text">
+               <div className="RentLogo">Аренда</div>
+               <RentTabs handleTabItemClick={this.handleTabItemClick.bind(this)} />
+            </div>
             <div className="RentObjects_container">
                <TransitionGroup>
                   <CSSTransition

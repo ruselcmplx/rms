@@ -7,6 +7,14 @@
    animation-fill-mode: forwards;
 }
 
+.Logo_text {
+   display: flex;
+}
+
+.RentLogo {
+   margin-right: 0.2em;
+}
+
 .RentObjects_container {
    position: relative;
 }

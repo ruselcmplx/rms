@@ -1,8 +1,5 @@
 .RentTabs {
    display: flex;
-   position: absolute;
-   top: 40px;
-   left: 8.3em;
    font-weight: bold;
    font-size: 72px;
    line-height: 86px;
@@ -16,4 +13,17 @@
 
 .RentTabs_tab-active {
    opacity: 1;
+}
+
+.RentTabs-enter {
+   opacity: 0.5;
+}
+
+.RentTabs-enter-active {
+   opacity: 1;
+   transition: all 1000ms ease-in-out;
+}
+
+.RentTabs-exit {
+   display: none;
 }
