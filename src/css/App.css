@@ -23,6 +23,15 @@
    overflow-x: hidden;
 }
 
+.App h3 {
+   font-size: 32px;
+   line-height: 40px;
+}
+
+.App li {
+   line-height: 32px;
+}
+
 .Logo {
    position: absolute;
    animation-duration: 3s;

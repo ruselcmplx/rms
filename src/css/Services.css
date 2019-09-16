@@ -13,10 +13,6 @@
    margin-bottom: 400px;
 }
 
-.Services_text h3 {
-   font-size: 32px;
-}
-
 .Services_text ul {
    list-style: none;
    padding-inline-start: 0;
@@ -56,7 +52,6 @@
    display: flex;
    align-items: center;
    padding: 0 7px;
-   line-height: 39px;
 }
 
 .Services_menu li#streams {
