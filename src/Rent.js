@@ -31,7 +31,7 @@ class Rent extends Component {
                   <CSSTransition
                      key={activeTab}
                      timeout={1000}
-                     classNames="RentObjects"
+                     classNames="RentObjectsArea"
                   >
                      <RentObjects tab={activeTab} />
                   </CSSTransition>

@@ -27,7 +27,7 @@
 }
 
 .About_carousel {
-   position: absolute;
+   position: fixed;
    top: 0;
    right: 130px;
    width: 200px;

@@ -1,4 +1,5 @@
 .Rent {
+   position: relative;
    flex: 1 1 auto;
    padding-top: 160px;
    opacity: 0;
@@ -19,23 +20,55 @@
    position: relative;
 }
 
-.RentObjects-enter {
+.RentObjects {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.RentObject {
+   display: flex;
+   margin-bottom: 40px;
+   margin-right: 24px;
+}
+
+.RentObject_img {
+   width: 180px;
+   height: 180px;
+}
+
+.RentObject_content {
+   width: 340px;
+   margin-left: 16px;
+   line-height: 24px;
+}
+
+.RentObject_content-caption {
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 16px;
+}
+
+.RentObject_content-text {
+   font-size: 18px;
+}
+
+.RentObjectsArea-enter {
    opacity: 0;
    position: absolute;
    top: 0;
    left: 0;
 }
 
-.RentObjects-enter-active {
+.RentObjectsArea-enter-active {
    opacity: 1;
    transition: all 1000ms ease-in-out;
 }
 
-.RentObjects-exit {
+.RentObjectsArea-exit {
    opacity: 1;
 }
 
-.RentObjects-exit-active {
+.RentObjectsArea-exit-active {
    opacity: 0;
    transition: all 100ms ease-in-out;
 }

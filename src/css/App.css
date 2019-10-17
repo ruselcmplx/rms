@@ -52,6 +52,10 @@
    line-height: 86px;
 }
 
+.Content {
+   width: 100%;
+}
+
 .ActiveArea {
    position: relative;
    margin-left: 110px;
