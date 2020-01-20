@@ -45,7 +45,11 @@ class About extends Component {
                      fill="white"
                   />
                </svg>
-               <div className="About_offer-text">Коммерческое предложение</div>
+               <div className="About_offer-text">
+                  <a href="./resources/rms_compred.pdf" download>
+                     Коммерческое предложение
+                  </a>
+               </div>
             </div>
             <div className="About_carousel">
                <Carousel />

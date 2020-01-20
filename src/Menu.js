@@ -32,21 +32,21 @@ class Menu extends Component {
             </div>
             <div className="MenuItems">
                <ul>
-                  <li>
+                  {/* <li>
                      <span onClick={this.handleMenuItemClick.bind(this, 1)}>
                         Аренда
                      </span>
-                  </li>
+                  </li> */}
                   <li>
                      <span onClick={this.handleMenuItemClick.bind(this, 2)}>
                         Услуги
                      </span>
                   </li>
-                  <li>
+                  {/* <li>
                      <span onClick={this.handleMenuItemClick.bind(this, 3)}>
                         Проекты
                      </span>
-                  </li>
+                  </li> */}
                   <li>
                      <span onClick={this.handleMenuItemClick.bind(this, 4)}>
                         О нас
@@ -54,8 +54,12 @@ class Menu extends Component {
                   </li>
                </ul>
                <div className="MenuInfo">
-                  <span>hello@rms.group</span>
-                  <span>+7 987 231-77-46</span>
+                  <div>
+                     <a href="mailto:info@rms.group">info@rms.group</a>
+                  </div>
+                  <div>
+                     <a href="tel:+78005501669">+7 800 550 16 69</a>
+                  </div>
                </div>
             </div>
          </div>

@@ -14,7 +14,7 @@ class RentObjects extends Component {
             {currentData.map(item => {
                return (
                   <div key={item.id} className="RentObject">
-                     <img className="RentObject_img"></img>
+                     <img alt="" className="RentObject_img"></img>
                      <div className="RentObject_content">
                         <div className="RentObject_content-caption">
                            {item.caption}

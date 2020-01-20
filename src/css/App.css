@@ -23,6 +23,11 @@
    overflow-x: hidden;
 }
 
+.App a {
+   color: #ffffff;
+   text-decoration: none;
+}
+
 .App h3 {
    font-size: 32px;
    line-height: 40px;

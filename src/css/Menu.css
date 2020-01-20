@@ -67,8 +67,7 @@
    bottom: 20px;
 }
 
-.MenuInfo span {
-   display: block;
+.MenuInfo div {
    margin-bottom: 7px;
 }
 
