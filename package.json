@@ -21,6 +21,11 @@
     "eject": "react-scripts eject",
     "prettify": "gulp prettify"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prebuild"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -33,6 +38,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "gulp-prettier": "^2.3.0"
+    "gulp-prettier": "^2.3.0",
+    "husky": "^4.2.5"
   }
 }

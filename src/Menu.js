@@ -22,7 +22,9 @@ class Menu extends Component {
    }
 
    render() {
-      const menuButtonClassName = this.state.opened ? 'MenuButton MenuButton_opened' : 'MenuButton';
+      const menuButtonClassName = this.state.opened
+         ? 'MenuButton MenuButton_opened'
+         : 'MenuButton';
       return (
          <div className="Menu" ref="menu">
             <div
