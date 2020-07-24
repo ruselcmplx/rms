@@ -12,6 +12,10 @@
    justify-content: center;
 }
 
+.Carousel_item img {
+   height: 50px;
+}
+
 @keyframes scroll {
    0% {
       transform: translateY(calc(-100px * 21));
