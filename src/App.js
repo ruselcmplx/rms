@@ -56,7 +56,7 @@ class App extends Component {
 
       return (
          <div className="App" id="scroll">
-            <div className="Logo">
+            <div className={'Logo Logo' + stateClass}>
                <img alt="" src="./img/Group.svg" />
             </div>
             <div className={'Content ' + stateClass}>

@@ -30,6 +30,9 @@ class Menu extends Component {
                   <rect width="40" height="10" fill="white" />
                </svg>
             </div>
+            <div className="MenuLogo">
+               <img alt="" src="./img/Group.svg" />
+            </div>
             <div className="MenuItems">
                <ul>
                   {/* <li>

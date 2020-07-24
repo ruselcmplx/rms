@@ -42,10 +42,19 @@
    animation-duration: 3s;
    animation-name: slidein;
    animation-delay: 3s;
-   top: 50%;
+   top: 50vh;
    left: 110px;
    width: 180px;
    animation-fill-mode: forwards;
+}
+
+.LogoMenu_opened {
+   opacity: 0;
+   transition: opacity .5s;
+}
+
+.LogoMenu_closed {
+   opacity: 1;
 }
 
 .Logo_text {
