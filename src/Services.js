@@ -6,7 +6,7 @@ class Services extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         activeMenuItem: 'rent'
+         activeMenuItem: 'rent',
       };
       this.children = {};
       this.sizes = {};
@@ -22,7 +22,7 @@ class Services extends Component {
             const height = child.offsetHeight;
             this.sizes[name] = {
                offset,
-               height
+               height,
             };
          }
       }
@@ -49,7 +49,7 @@ class Services extends Component {
       this.children[activeMenuItem].scrollIntoView({
          behavior: 'smooth',
          block: 'center',
-         inline: 'center'
+         inline: 'center',
       });
    }
 
@@ -64,7 +64,7 @@ class Services extends Component {
             if (scrollTop < bottom && scrollTop > top) {
                if (name !== this.state.activeMenuItem) {
                   this.setState({
-                     activeMenuItem: name
+                     activeMenuItem: name,
                   });
                }
                return;
@@ -75,53 +75,53 @@ class Services extends Component {
 
    render() {
       const displayNone = {
-         display: 'none'
+         display: 'none',
       };
       const menuItems = [
          {
             id: 'rent',
-            text: 'Аренда оборудования'
+            text: 'Аренда оборудования',
          },
          {
             id: 'displays',
-            text: 'Светодиодные экраны'
+            text: 'Светодиодные экраны',
          },
          {
             id: 'support',
-            text: 'Техническое сопровождение'
+            text: 'Техническое сопровождение',
          },
          {
             id: 'streams',
-            text: 'Организация трансляций, конференций и телемостов'
+            text: 'Организация трансляций, конференций и телемостов',
          },
          {
             id: 'conference',
-            text: 'Системы конференц-связи'
+            text: 'Системы конференц-связи',
          },
          {
             id: 'translate',
-            text: 'Синхронный перевод'
+            text: 'Синхронный перевод',
          },
          {
             id: 'interactive',
-            text: 'Интерактивные инсталяции'
+            text: 'Интерактивные инсталяции',
          },
          {
             id: 'video',
-            text: 'Производство видео'
+            text: 'Производство видео',
          },
          {
             id: 'tvbridges',
-            text: 'Телемосты'
+            text: 'Телемосты',
          },
          {
             id: 'offices',
-            text: 'Мобильные офисы'
+            text: 'Мобильные офисы',
          },
          {
             id: 'presscentre',
-            text: 'Организация пресс-центров'
-         }
+            text: 'Организация пресс-центров',
+         },
       ];
       const activeMenuItem = this.state.activeMenuItem;
       return (
@@ -378,27 +378,27 @@ class Services extends Component {
                </div>
             </div>
             <div className="Services_menu">
-               <ul>
-                  {menuItems.map((item, id) => {
-                     return (
-                        <li
-                           key={id}
-                           id={item.id}
-                           className={
-                              activeMenuItem === item.id
-                                 ? 'Services_menu-active'
-                                 : ''
-                           }
-                           onClick={this.handleServicesMenuClick.bind(
-                              this,
-                              item.id
-                           )}
-                        >
-                           <div>{item.text}</div>
-                        </li>
-                     );
-                  })}
-               </ul>
+               {menuItems.map((item, id) => {
+                  return (
+                     <div
+                        key={id}
+                        id={item.id}
+                        className={
+                           activeMenuItem === item.id
+                              ? 'Services_menu-item Services_menu-active'
+                              : 'Services_menu-item'
+                        }
+                        onClick={this.handleServicesMenuClick.bind(
+                           this,
+                           item.id
+                        )}
+                     >
+                        <span>
+                           {item.text}
+                        </span>
+                     </div>
+                  );
+               })}
             </div>
          </div>
       );
