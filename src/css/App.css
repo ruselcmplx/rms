@@ -76,6 +76,7 @@
    opacity: 1;
    flex: 1 1 auto;
    transition: opacity 0.5s;
+   height: 100%;
 }
 
 .Menu_opened .ActiveArea {

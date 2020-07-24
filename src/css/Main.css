@@ -1,12 +1,14 @@
 .Main {
-   height: 0;
+   height: 100vh;
    flex: 1 1 auto;
-   padding-top: 160px;
    opacity: 0;
    animation-name: fadein;
    animation-duration: 2s;
    animation-delay: 5s;
    animation-fill-mode: forwards;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
 }
 
 .Main .Text {
