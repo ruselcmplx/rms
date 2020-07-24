@@ -13,6 +13,14 @@
    margin-bottom: 400px;
 }
 
+.Services_text h4 {
+   font-family: Inter;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 30px;
+   line-height: 135%;
+}
+
 .Services_text ul {
    list-style: none;
    padding-inline-start: 0;
