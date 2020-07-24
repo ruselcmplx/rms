@@ -72,6 +72,56 @@
    animation-delay: 4s;
    animation-fill-mode: forwards;
    cursor: pointer;
+   width: 40px;
+   height: 40px;
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   -webkit-transition: all .25s ease-in-out;
+   -moz-transition: all .25s ease-in-out;
+   -o-transition: all .25s ease-in-out;
+   transition: all .25s ease-in-out;
+}
+
+.MenuButton span {
+   width: 40px;
+   height: 10px;
+   background-color: white;
+   display: block;
+   position: absolute;
+   -webkit-transform: rotate(0deg) translate(0, 0);
+   -moz-transform: rotate(0deg) translate(0, 0);
+   -o-transform: rotate(0deg) translate(0, 0);
+   transform: rotate(0deg) translate(0, 0);
+   -webkit-transition: all .25s ease-in-out;
+   -moz-transition: all .25s ease-in-out;
+   -o-transition: all .25s ease-in-out;
+   transition: all .25s ease-in-out;
+   left: 0;
+   opacity: 1;
+}
+
+.MenuButton span:nth-child(2) {
+   top: 0px;
+}
+
+.MenuButton span:nth-child(2) {
+   top: 20px;
+}
+
+.MenuButton_opened span:nth-child(1) {
+   -webkit-transform: rotate(45deg) translate(3px, 10px);
+   -moz-transform: rotate(45deg) translate(3px, 10px);
+   -o-transform: rotate(45deg) translate(3px, 10px);
+   transform: rotate(45deg) translate(3px, 10px);
+}
+
+.MenuButton_opened span:nth-child(2) {
+   -webkit-transform: rotate(-45deg) translate(4px, -11px);
+   -moz-transform: rotate(-45deg) translate(4px, -11px);
+   -o-transform: rotate(-45deg) translate(4px, -11px);
+   transform: rotate(-45deg) translate(4px, -11px);
 }
 
 .MenuInfo {

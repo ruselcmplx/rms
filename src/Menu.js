@@ -11,6 +11,9 @@ class Menu extends Component {
 
    handleMenuClick() {
       this.props.handleMenuButtonClick();
+      this.setState({
+         opened: !this.state.opened
+      });
    }
 
    handleMenuItemClick(id) {
@@ -19,16 +22,15 @@ class Menu extends Component {
    }
 
    render() {
+      const menuButtonClassName = this.state.opened ? 'MenuButton MenuButton_opened' : 'MenuButton';
       return (
          <div className="Menu" ref="menu">
             <div
-               className="MenuButton"
+               className={menuButtonClassName}
                onClick={this.handleMenuClick.bind(this)}
             >
-               <svg width="40" height="30" viewBox="0 0 40 30" fill="none">
-                  <rect y="20" width="40" height="10" fill="white" />
-                  <rect width="40" height="10" fill="white" />
-               </svg>
+               <span></span>
+               <span></span>
             </div>
             <div className="MenuLogo">
                <img alt="" src="./img/Group.svg" />
